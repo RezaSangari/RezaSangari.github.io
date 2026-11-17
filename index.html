@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Reza Sangari Abiz">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'sha256-B0yMvI5IlOldA7nO92CLhZB787HV8Xy1ld/g+oR3g74='; script-src 'sha256-pfHgTxB0QNLyAQOgV3e2KeJLr3N+4To+hGouarpMkpw=' 'sha256-8dCxtRW2Sma4xniO3SMKphK2MI+J2fibkXuaBc6BKbI='; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'sha256-ab6RiKRw5R9BegLaxbGS4Z49BUoXa57cmXQWTk44ioQ='; script-src 'sha256-pfHgTxB0QNLyAQOgV3e2KeJLr3N+4To+hGouarpMkpw=' 'sha256-8dCxtRW2Sma4xniO3SMKphK2MI+J2fibkXuaBc6BKbI='; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0f2a4a">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1622">
@@ -109,14 +109,14 @@
   header.site .wrap {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     min-height: 56px;
+    max-width: 1040px;
   }
   .brand { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight: 600; color: var(--navy); font-size: 17px; white-space: nowrap; }
   nav { margin-left: auto; min-width: 0; }
-  nav ul { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; }
-  nav ul::-webkit-scrollbar { display: none; }
-  nav a { display: block; padding: 11px 10px; color: var(--ink); font-size: 14px; white-space: nowrap; border-radius: 6px; transition: background-color .15s ease; }
+  nav ul { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; overflow-x: auto; }
+  nav a { display: block; padding: 11px 7px; color: var(--ink); font-size: 14px; white-space: nowrap; border-radius: 6px; transition: background-color .15s ease; }
   nav a:hover, nav a:focus-visible { background: var(--accent-soft); text-decoration: none; }
   nav a:focus-visible { outline-offset: -3px; }
 
@@ -151,10 +151,9 @@
   .chips a:hover, .chips button:hover { background: var(--accent-soft); text-decoration: none; }
   .chips a.primary:hover { background: var(--navy); }
   .copy-note { font-size: 13px; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; }
-  .role-strip { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
 
   /* Sections */
-  section { padding: 28px 0 8px; scroll-margin-top: 76px; }
+  section { padding: 36px 0 8px; scroll-margin-top: 76px; }
   section + section { border-top: 1px solid var(--line); margin-top: 20px; }
   h2 {
     font-family: 'Source Serif 4', Georgia, "Times New Roman", serif;
@@ -237,6 +236,7 @@
   .badge.oral { background: var(--green-bg); color: var(--green-ink); }
   .badge.prep { background: var(--slate-bg); color: var(--slate-ink); }
   .pub-meta { color: var(--muted); font-size: 14px; margin-top: 2px; font-feature-settings: "tnum"; }
+  .pub-venue { color: var(--navy); font-weight: 600; }
   .pub-desc { margin: 6px 0 0; font-size: 15px; }
 
   /* Project cards */
@@ -248,6 +248,9 @@
     background: #fbfcfe;
   }
   .card + .card { margin-top: 18px; }
+  .card figure { margin: 14px 0 0; }
+  .card figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; }
+  .card figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
   .card .kind { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 10px 0 0; padding: 0; }
   .tags li { background: var(--accent-soft); color: var(--navy); font-size: 13px; padding: 3px 10px; border-radius: 999px; }
@@ -267,7 +270,10 @@
 
   /* Skills */
   .skill-groups { display: grid; gap: 16px; }
-  @media (min-width: 640px) { .skill-groups { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 640px) {
+    .skill-groups { grid-template-columns: 1fr 1fr; }
+    #research .skill-groups > div:last-child { grid-column: 1 / -1; }
+  }
   .skill-groups h3 { font-size: 15px; margin-bottom: 6px; }
   .skill-groups ul { margin: 0; padding-left: 18px; }
   .skill-groups li { margin-bottom: 2px; }
@@ -349,11 +355,6 @@
     .one-liner {
       font-size: 10.5pt;
       margin: 0 0 8px;
-    }
-    .role-strip {
-      color: #444 !important;
-      font-size: 9.5pt;
-      margin: 6px 0 0;
     }
     .chips {
       gap: 4px 14px;
@@ -548,7 +549,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#certs">Certifications</a></li>
+        <li><a href="#certs">Credentials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -571,7 +572,6 @@
           <li><a href="https://orcid.org/0009-0001-8662-9218" aria-label="ORCID — publications">ORCID</a></li>
           <li><button type="button" id="copy-email">Copy email</button></li>
         </ul>
-        <p class="role-strip">Independent Researcher &middot; Soft Computing &amp; Scientific Machine Learning &middot; PINNs &amp; Metaheuristic Optimization</p>
         <p class="copy-note" id="copy-note" role="status" aria-live="polite"></p>
         <noscript><p class="copy-note">Copy is unavailable without JavaScript — email: reza.abiz80 [at] gmail.com</p></noscript>
       </div>
@@ -655,14 +655,14 @@
         <li>
           <span class="pub-title">A Hybrid Metaheuristic Algorithm (MFO–BOA) for Numerical Solution of Nonlinear Partial Differential Equations with Engineering Applications</span>
           <span class="badge submitted">Submitted · Oct 2026 · MMR-2607-1000</span>
-          <p class="pub-meta">Dr. Reza Pourgholi, Dr. Sajjad Rahmani, Dr. Saedeh Foadian, Reza Sangari Abiz · Journal of Mathematical Research · <a href="https://github.com/RezaSangari/MFO-BOA-PDE-Solver" aria-label="Code for the MFO–BOA paper">Code</a></p>
+          <p class="pub-meta">Dr. Reza Pourgholi, Dr. Sajjad Rahmani, Dr. Saedeh Foadian, <strong>Reza Sangari Abiz</strong> · <span class="pub-venue">Journal of Mathematical Research</span> · <a href="https://github.com/RezaSangari/MFO-BOA-PDE-Solver" aria-label="Code for the MFO–BOA paper">Code</a></p>
           <p class="pub-desc">M.Sc. thesis work: a hybrid MFO–BOA solver with B-spline collocation for nonlinear PDEs, benchmarked against classical methods.</p>
         </li>
         <li>
           <span class="pub-title">Artificial Intelligence and Machine Learning in Nanotechnology: A Selective Critical Narrative Review with Evidence-Type Stratification</span>
           <span class="badge submitted">Submitted · Oct 2026 · Decision pending</span>
           <span class="badge oral">Oral presentation · NCWNN7 · icnn2026-00630036</span>
-          <p class="pub-meta">Reza Sangari Abiz, Pooria Salehi Siuki · NCWNN7 conference · <a href="https://icnn2026.ir/" aria-label="NCWNN7 conference website">Conference website</a></p>
+          <p class="pub-meta"><strong>Reza Sangari Abiz</strong>, Pooria Salehi Siuki · <span class="pub-venue">NCWNN7 conference</span> · <a href="https://icnn2026.ir/" aria-label="NCWNN7 conference website">Conference website</a></p>
           <p class="pub-desc">Selective critical review of AI and machine learning in nanotechnology, organised by type of evidence.</p>
         </li>
       </ol>
@@ -674,7 +674,7 @@
         <li>
           <span class="pub-title">Diagnosing Fitness-Selection Reliability in Metaheuristic Optimization of Physics-Informed Neural Networks for Stiff Reaction–Diffusion Systems: A Selected-Configuration (B1) Diagnostic Against the Corrected Baseline</span>
           <span class="badge prep">In preparation · MedLife 2027</span>
-          <p class="pub-meta">Reza Sangari Abiz, Pooria Salehi Siuki · First International Interdisciplinary Sciences Congress (MedLife 2027), Tehran, February 2027 · <a href="https://medlife2027.ir/" aria-label="MedLife 2027 congress website">Congress website</a></p>
+          <p class="pub-meta"><strong>Reza Sangari Abiz</strong>, Pooria Salehi Siuki · <span class="pub-venue">First International Interdisciplinary Sciences Congress (MedLife 2027), Tehran, February 2027</span> · <a href="https://medlife2027.ir/" aria-label="MedLife 2027 congress website">Congress website</a></p>
           <p class="pub-desc">Diagnostic study of when fitness-based selection of PINN configurations optimized by hybrid MFO–BOA can be trusted for stiff reaction–diffusion systems.</p>
         </li>
       </ol>
@@ -689,6 +689,10 @@
       <h3>MFO–BOA–PDE–Solver</h3>
       <p>Hybrid Moth-Flame Optimization (MFO) + Butterfly Optimization Algorithm (BOA) with B-spline collocation for nonlinear PDEs. M.Sc. thesis implementation, Damghan University (2026).</p>
       <p class="small">Thesis benchmarks (30 runs, mean RMSE): heat equation 3.2&times;10<sup>−5</sup>; Burgers&rsquo; equation 2.8&times;10<sup>−4</sup> — about 62% lower than MFO and 69% lower than BOA; diffusion equation 3.9&times;10<sup>−4</sup> (M.Sc. thesis; baselines in the <a href="https://github.com/RezaSangari/MFO-BOA-PDE-Solver">repository README</a>).</p>
+      <figure>
+        <img src="images/rmse-burgers.png" alt="Bar chart: mean RMSE on Burgers' equation over 30 independent runs — Hybrid MFO–BOA 2.8e-04, standalone MFO 7.3e-04, standalone BOA 9.1e-04" width="1350" height="780" loading="lazy">
+        <figcaption>Burgers&rsquo; equation — mean RMSE over 30 independent runs (M.Sc. thesis, Table 3-2).</figcaption>
+      </figure>
       <p class="small">Companion paper: MFO–BOA article, Submitted Oct 2026 (<a href="#publications">see Publications</a>).</p>
       <p class="card-links">
         <a href="https://github.com/RezaSangari/MFO-BOA-PDE-Solver">GitHub repository</a>
