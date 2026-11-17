@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Reza Sangari Abiz">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'sha256-ab6RiKRw5R9BegLaxbGS4Z49BUoXa57cmXQWTk44ioQ='; script-src 'sha256-pfHgTxB0QNLyAQOgV3e2KeJLr3N+4To+hGouarpMkpw=' 'sha256-8dCxtRW2Sma4xniO3SMKphK2MI+J2fibkXuaBc6BKbI='; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'sha256-sRiMsc89TKU/cOypl2IDIgHSfN4+zFkB6I6gZi9PTKE='; script-src 'sha256-pfHgTxB0QNLyAQOgV3e2KeJLr3N+4To+hGouarpMkpw=' 'sha256-8dCxtRW2Sma4xniO3SMKphK2MI+J2fibkXuaBc6BKbI='; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0f2a4a">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1622">
@@ -98,7 +98,6 @@
   .skip-link:focus { left: 8px; top: 8px; }
   .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
 
-  /* Header / nav */
   header.site {
     position: sticky;
     top: 0;
@@ -120,7 +119,6 @@
   nav a:hover, nav a:focus-visible { background: var(--accent-soft); text-decoration: none; }
   nav a:focus-visible { outline-offset: -3px; }
 
-  /* Hero */
   .hero { padding: 48px 0 8px; }
   .hero-inner { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
   .hero-inner > div { min-width: 0; }
@@ -152,7 +150,6 @@
   .chips a.primary:hover { background: var(--navy); }
   .copy-note { font-size: 13px; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; }
 
-  /* Sections */
   section { padding: 36px 0 8px; scroll-margin-top: 76px; }
   section + section { border-top: 1px solid var(--line); margin-top: 20px; }
   h2 {
@@ -168,7 +165,6 @@
   .muted { color: var(--muted); }
   .small { font-size: 14px; }
 
-  /* Now / Previously card */
   .now-prev {
     margin: 0 0 16px;
     padding: 10px 14px;
@@ -178,7 +174,6 @@
     font-size: 15px;
   }
 
-  /* Timeline & News lists */
   .meta-block {
     margin-top: 22px;
     padding-top: 16px;
@@ -206,7 +201,6 @@
   }
   .meta-detail { margin: 0; }
 
-  /* Publications */
   section#publications { counter-reset: pub; }
   .pub-group { margin-top: 16px; }
   .pub-group + .pub-group { margin-top: 22px; }
@@ -239,7 +233,6 @@
   .pub-venue { color: var(--navy); font-weight: 600; }
   .pub-desc { margin: 6px 0 0; font-size: 15px; }
 
-  /* Project cards */
   .card {
     border: 1px solid var(--line);
     border-left: 4px solid var(--accent);
@@ -258,7 +251,6 @@
   .card-links a + a::before,
   .card-links a + span::before { content: "· "; color: var(--muted); }
 
-  /* Education & Teaching */
   .edu { margin: 0 0 16px; }
   .edu .where { color: var(--muted); font-size: 14px; }
   .teaching-block {
@@ -268,7 +260,6 @@
   }
   .teaching-block h3 { margin-bottom: 8px; }
 
-  /* Skills */
   .skill-groups { display: grid; gap: 16px; }
   @media (min-width: 640px) {
     .skill-groups { grid-template-columns: 1fr 1fr; }
@@ -278,13 +269,11 @@
   .skill-groups ul { margin: 0; padding-left: 18px; }
   .skill-groups li { margin-bottom: 2px; }
 
-  /* Certifications */
   dl.certs { margin: 0; display: grid; gap: 12px; }
   dl.certs div { display: grid; grid-template-columns: 140px 1fr; gap: 12px; }
   dl.certs dt { font-weight: 700; color: var(--navy); font-size: 15px; }
   dl.certs dd { margin: 0; }
 
-  /* Footer */
   footer.site { border-top: 1px solid var(--line); margin-top: 32px; padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
   footer.site .links { display: flex; flex-wrap: wrap; gap: 4px 18px; list-style: none; margin: 0 0 12px; padding: 0; }
 
@@ -305,7 +294,6 @@
     .meta-list li { grid-template-columns: 1fr; gap: 2px; }
   }
 
-  /* Print stylesheet */
   @media print {
     @page {
       margin: 1.2cm 1.4cm;
