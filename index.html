@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Reza Sangari Abiz">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'sha256-ct9NfXgc8HsM74u3HGsKyB4Zp8cd/q16sE2JAgrN1y4='; script-src 'sha256-stpMubggl6Kejr8gxsFQAdgNcFndStsHwQCYRAUxh6c=' 'sha256-/S7hBg7JB3OuyKyjW6T53FKtlX5NtxAbtXRTtLno0Cc='; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'sha256-ct9NfXgc8HsM74u3HGsKyB4Zp8cd/q16sE2JAgrN1y4='; script-src 'sha256-pfHgTxB0QNLyAQOgV3e2KeJLr3N+4To+hGouarpMkpw=' 'sha256-8dCxtRW2Sma4xniO3SMKphK2MI+J2fibkXuaBc6BKbI='; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0f2a4a">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1622">
@@ -38,7 +38,6 @@
   "image": "https://rezasangari.github.io/images/social-preview.jpg",
   "jobTitle": "AI Researcher",
   "description": "AI researcher in soft computing, metaheuristic optimization and scientific machine learning for nonlinear partial differential equations.",
-  "email": "mailto:reza.abiz80@gmail.com",
   "alumniOf": [
     {"@type": "CollegeOrUniversity", "name": "Damghan University"},
     {"@type": "CollegeOrUniversity", "name": "Birjand University of Technology"}
@@ -566,7 +565,7 @@
         </ul>
         <p class="role-strip">Independent Researcher &middot; Soft Computing &amp; Scientific Machine Learning &middot; PINNs &amp; Metaheuristic Optimization</p>
         <p class="copy-note" id="copy-note" role="status" aria-live="polite"></p>
-        <noscript><p class="copy-note">Copy is unavailable without JavaScript — email: reza.abiz80@gmail.com</p></noscript>
+        <noscript><p class="copy-note">Copy is unavailable without JavaScript — email: reza.abiz80 [at] gmail.com</p></noscript>
       </div>
     </div>
   </div>
@@ -794,7 +793,7 @@
   <section id="contact" aria-labelledby="contact-h">
     <h2 id="contact-h"><span class="num" aria-hidden="true">08</span>Contact</h2>
     <p>The best way to reach me is by email. I am open to research collaborations.</p>
-    <p><a href="mailto:reza.abiz80@gmail.com">reza.abiz80@gmail.com</a></p>
+    <p><a id="email-link" href="#">reza.abiz80 [at] gmail.com</a></p>
   </section>
 
 </main>
@@ -813,10 +812,17 @@
 
 <script>
   (function () {
+    var user = 'reza.abiz80';
+    var domain = 'gmail.com';
+    var email = user + '@' + domain;
+    var link = document.getElementById('email-link');
+    if (link) {
+      link.href = 'mailto:' + email;
+      link.textContent = email;
+    }
     var btn = document.getElementById('copy-email');
     var note = document.getElementById('copy-note');
     btn.addEventListener('click', function () {
-      var email = 'reza.abiz80@gmail.com';
       function done() { note.textContent = 'Email copied: ' + email; }
       function fail() { note.textContent = 'Copy failed — email: ' + email; }
       if (navigator.clipboard && navigator.clipboard.writeText) {
