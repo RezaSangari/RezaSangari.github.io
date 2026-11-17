@@ -4,7 +4,7 @@ Source for the personal profile website of Reza Sangari Abiz (AI researcher) —
 
 ## Preview and deploy
 
-The site is a static site served by GitHub Pages from this repository's `main` branch. Any push to `main` redeploys it (allow a minute for the rebuild). To preview locally, open `index.html` in a browser (or serve the folder with any static server).
+GitHub Pages serves the site from this repository's `main` branch. Any push to `main` redeploys it (allow a minute for the rebuild). To preview locally, open `index.html` in a browser (or serve the folder with any static server).
 
 ## Contents
 
