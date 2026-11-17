@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Reza Sangari Abiz">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'sha256-ct9NfXgc8HsM74u3HGsKyB4Zp8cd/q16sE2JAgrN1y4='; script-src 'sha256-pfHgTxB0QNLyAQOgV3e2KeJLr3N+4To+hGouarpMkpw=' 'sha256-8dCxtRW2Sma4xniO3SMKphK2MI+J2fibkXuaBc6BKbI='; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'sha256-VXk7s9LBQeu9UKV8sc4ORWN2Mp/2RoCelaP32jcvwQY='; script-src 'sha256-pfHgTxB0QNLyAQOgV3e2KeJLr3N+4To+hGouarpMkpw=' 'sha256-8dCxtRW2Sma4xniO3SMKphK2MI+J2fibkXuaBc6BKbI='; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0f2a4a">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1622">
@@ -29,6 +29,8 @@
 <meta name="twitter:title" content="Reza Sangari Abiz | AI Researcher &amp; Soft Computing">
 <meta name="twitter:description" content="Hybrid metaheuristics (MFO–BOA), physics-informed neural networks and numerical methods for nonlinear PDEs.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%230f2a4a'/%3E%3Ctext%20x='16'%20y='21'%20font-size='15'%20text-anchor='middle'%20fill='white'%20font-family='Georgia,serif'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/source-serif-4-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,6 +54,13 @@
 }
 </script>
 <style>
+  /* Self-hosted fonts (OFL): Inter for body/nav/buttons/meta, Source Serif 4 for name/headings */
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-latin-400-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('fonts/inter-latin-500-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/inter-latin-600-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/inter-latin-700-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Source Serif 4'; font-style: normal; font-weight: 600; font-display: swap; src: url('fonts/source-serif-4-latin-600-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Source Serif 4'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/source-serif-4-latin-700-normal.woff2') format('woff2'); }
   :root {
     --navy: #0f2a4a;
     --ink: #1c2733;
@@ -77,7 +86,7 @@
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.65;
   }
@@ -104,7 +113,7 @@
     gap: 16px;
     min-height: 56px;
   }
-  .brand { font-family: Georgia, "Times New Roman", serif; font-weight: 700; color: var(--navy); font-size: 17px; white-space: nowrap; }
+  .brand { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight: 600; color: var(--navy); font-size: 17px; white-space: nowrap; }
   nav { margin-left: auto; min-width: 0; }
   nav ul { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; }
   nav ul::-webkit-scrollbar { display: none; }
@@ -122,9 +131,9 @@
     border: 3px solid var(--accent-soft);
   }
   h1 {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: 'Source Serif 4', Georgia, "Times New Roman", serif;
     color: var(--navy);
-    font-size: 34px; line-height: 1.2; margin: 0 0 6px;
+    font-size: 34px; line-height: 1.2; margin: 0 0 6px; font-weight: 700;
   }
   .tagline { font-size: 18px; color: var(--navy); margin: 0 0 10px; font-weight: 600; }
   .one-liner { margin: 0 0 18px; max-width: 56ch; }
@@ -149,9 +158,9 @@
   section { padding: 28px 0 8px; scroll-margin-top: 76px; }
   section + section { border-top: 1px solid var(--line); margin-top: 20px; }
   h2 {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: 'Source Serif 4', Georgia, "Times New Roman", serif;
     color: var(--navy);
-    font-size: 22px; margin: 0 0 14px;
+    font-size: 22px; margin: 0 0 14px; font-weight: 600;
   }
   h1, h2, .pub-title { text-wrap: balance; }
   h2 .num { color: var(--accent); font-size: 15px; font-family: inherit; margin-right: 8px; }
@@ -204,8 +213,8 @@
   .pub-group { margin-top: 16px; }
   .pub-group + .pub-group { margin-top: 22px; }
   .pub-group-title {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 18px;
+    font-family: 'Source Serif 4', Georgia, "Times New Roman", serif;
+    font-size: 18px; font-weight: 600;
     color: var(--navy);
     margin: 0 0 8px;
     padding-bottom: 4px;
@@ -216,7 +225,7 @@
   ol.pubs > li + li { border-top: 1px solid var(--line); }
   ol.pubs > li::before {
     content: counter(pub, decimal-leading-zero) ".";
-    font-family: Georgia, serif; color: var(--accent);
+    font-family: 'Source Serif 4', Georgia, serif; color: var(--accent);
     font-weight: 700; margin-right: 8px;
   }
   .pub-title { font-weight: 700; color: var(--navy); }
@@ -228,7 +237,7 @@
   .badge.submitted { background: var(--amber-bg); color: var(--amber-ink); }
   .badge.oral { background: var(--green-bg); color: var(--green-ink); }
   .badge.prep { background: var(--slate-bg); color: var(--slate-ink); }
-  .pub-meta { color: var(--muted); font-size: 14px; margin-top: 2px; }
+  .pub-meta { color: var(--muted); font-size: 14px; margin-top: 2px; font-feature-settings: "tnum"; }
   .pub-desc { margin: 6px 0 0; font-size: 15px; }
 
   /* Project cards */
