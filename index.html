@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Reza Sangari Abiz">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'sha256-sRiMsc89TKU/cOypl2IDIgHSfN4+zFkB6I6gZi9PTKE='; script-src 'sha256-pfHgTxB0QNLyAQOgV3e2KeJLr3N+4To+hGouarpMkpw=' 'sha256-8dCxtRW2Sma4xniO3SMKphK2MI+J2fibkXuaBc6BKbI='; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'sha256-sRiMsc89TKU/cOypl2IDIgHSfN4+zFkB6I6gZi9PTKE='; script-src 'sha256-pfHgTxB0QNLyAQOgV3e2KeJLr3N+4To+hGouarpMkpw=' 'sha256-aDis55yN3dKsQN7bE8grXMXsyUkvteDpenWgZ8MEUwI='; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0f2a4a">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1622">
@@ -812,22 +812,22 @@
 
 <script>
   (function () {
-    var user = 'reza.abiz80';
-    var domain = 'gmail.com';
-    var email = user + '@' + domain;
-    var link = document.getElementById('email-link');
-    if (link) {
-      link.href = 'mailto:' + email;
-      link.textContent = email;
+    var localPart = 'reza.abiz80';
+    var mailDomain = 'gmail.com';
+    var email = localPart + '@' + mailDomain;
+    var emailLink = document.getElementById('email-link');
+    if (emailLink) {
+      emailLink.href = 'mailto:' + email;
+      emailLink.textContent = email;
     }
-    var btn = document.getElementById('copy-email');
-    var note = document.getElementById('copy-note');
-    btn.addEventListener('click', function () {
-      function done() { note.textContent = 'Email copied: ' + email; }
-      function fail() { note.textContent = 'Copy failed — email: ' + email; }
+    var copyBtn = document.getElementById('copy-email');
+    var copyNote = document.getElementById('copy-note');
+    copyBtn.addEventListener('click', function () {
+      function showCopied() { copyNote.textContent = 'Email copied: ' + email; }
+      function showCopyFailed() { copyNote.textContent = 'Copy failed — email: ' + email; }
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(email).then(done, fail);
-      } else { fail(); }
+        navigator.clipboard.writeText(email).then(showCopied, showCopyFailed);
+      } else { showCopyFailed(); }
     });
   })();
 </script>
