@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Reza Sangari Abiz">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'sha256-6aj39C24+5gjT3/SDS4hJGxGn6XnLUMO7MiXfpr2y/E='; script-src 'sha256-7RTRU2GE3nLd3a2/aHEC640JJTp30FVZJC35BCbdwCI=' 'sha256-/S7hBg7JB3OuyKyjW6T53FKtlX5NtxAbtXRTtLno0Cc='; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#0f2a4a">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e1622">
+<title>Reza Sangari Abiz | AI Researcher &amp; Soft Computing</title>
+<meta name="description" content="Personal academic profile of Reza Sangari Abiz — AI researcher in soft computing, metaheuristic optimization and scientific machine learning for nonlinear PDEs.">
+<meta property="og:title" content="Reza Sangari Abiz | AI Researcher &amp; Soft Computing">
+<meta property="og:description" content="Hybrid metaheuristics (MFO–BOA), physics-informed neural networks and numerical methods for nonlinear PDEs.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://reza-s80.github.io/">
+<meta property="og:image" content="https://reza-s80.github.io/images/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Reza Sangari Abiz — AI Researcher &amp; Soft Computing">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:site_name" content="Reza Sangari Abiz">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://reza-s80.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://reza-s80.github.io/images/social-preview.jpg">
+    <meta name="twitter:image:alt" content="Reza Sangari Abiz — AI Researcher &amp; Soft Computing">
+<meta name="twitter:title" content="Reza Sangari Abiz | AI Researcher &amp; Soft Computing">
+<meta name="twitter:description" content="Hybrid metaheuristics (MFO–BOA), physics-informed neural networks and numerical methods for nonlinear PDEs.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='15'%20fill='%230f2a4a'/%3E%3Ctext%20x='16'%20y='21'%20font-size='15'%20text-anchor='middle'%20fill='white'%20font-family='Georgia,serif'%3ER%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Reza Sangari Abiz",
+  "url": "https://reza-s80.github.io/",
+  "image": "https://reza-s80.github.io/images/social-preview.jpg",
+  "jobTitle": "AI Researcher",
+  "description": "AI researcher in soft computing, metaheuristic optimization and scientific machine learning for nonlinear partial differential equations.",
+  "email": "mailto:reza.abiz80@gmail.com",
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "Damghan University"},
+    {"@type": "CollegeOrUniversity", "name": "Birjand University of Technology"}
+  ],
+  "knowsAbout": ["Physics-informed neural networks", "Metaheuristic optimization", "Nonlinear partial differential equations", "Scientific machine learning", "Soft computing"],
+  "sameAs": [
+    "https://github.com/Reza-S80",
+    "https://www.linkedin.com/in/reza-sangari-abiz",
+    "https://orcid.org/0009-0001-8662-9218",
+    "https://huggingface.co/reza-sangari"
+  ]
+}
+</script>
+<style>
+  :root {
+    --navy: #0f2a4a;
+    --ink: #1c2733;
+    --muted: #5a6b7c;
+    --accent: #1d5fb8;
+    --accent-soft: #e8f0fb;
+    --line: #dde4ec;
+    --bg: #ffffff;
+    --amber-bg: #fdf3e3;
+    --amber-ink: #7a4d06;
+    --green-bg: #e6f4ea;
+    --green-ink: #1e6b34;
+    --slate-bg: #eef1f4;
+    --slate-ink: #44566a;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  a { color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
+  a, button { touch-action: manipulation; }
+  a:hover, a:focus-visible { text-decoration: underline; }
+  p a, .meta-detail a { text-decoration: underline; text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  .skip-link { position: absolute; left: -9999px; top: 0; background: #fff; padding: 8px 12px; z-index: 20; }
+  .skip-link:focus { left: 8px; top: 8px; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+
+  /* Header / nav */
+  header.site {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid var(--line);
+  }
+  header.site .wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 56px;
+  }
+  .brand { font-family: Georgia, "Times New Roman", serif; font-weight: 700; color: var(--navy); font-size: 17px; white-space: nowrap; }
+  nav { margin-left: auto; min-width: 0; }
+  nav ul { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; overflow-x: auto; scrollbar-width: none; }
+  nav ul::-webkit-scrollbar { display: none; }
+  nav a { display: block; padding: 11px 10px; color: var(--ink); font-size: 14px; white-space: nowrap; border-radius: 6px; transition: background-color .15s ease; }
+  nav a:hover, nav a:focus-visible { background: var(--accent-soft); text-decoration: none; }
+  nav a:focus-visible { outline-offset: -3px; }
+
+  /* Hero */
+  .hero { padding: 48px 0 8px; }
+  .hero-inner { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+  .hero-inner > div { min-width: 0; }
+  .photo {
+    width: 120px; height: 120px; flex: 0 0 120px;
+    border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--accent-soft);
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--navy);
+    font-size: 34px; line-height: 1.2; margin: 0 0 6px;
+  }
+  .tagline { font-size: 18px; color: var(--navy); margin: 0 0 10px; font-weight: 600; }
+  .one-liner { margin: 0 0 18px; max-width: 56ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+  .chips a, .chips button {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    font-size: 14px; font-weight: 600;
+    color: var(--accent); background: #fff;
+    cursor: pointer; font-family: inherit;
+    transition: background-color .15s ease, color .15s ease;
+  }
+  .chips a.primary { background: var(--accent); color: #fff; }
+  .chips a:hover, .chips button:hover { background: var(--accent-soft); text-decoration: none; }
+  .chips a.primary:hover { background: var(--navy); }
+  .copy-note { font-size: 13px; color: var(--muted); min-height: 1.2em; margin: 8px 0 0; }
+  .role-strip { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+
+  /* Sections */
+  section { padding: 28px 0 8px; scroll-margin-top: 76px; }
+  section + section { border-top: 1px solid var(--line); margin-top: 20px; }
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--navy);
+    font-size: 22px; margin: 0 0 14px;
+  }
+  h1, h2, .pub-title { text-wrap: balance; }
+  h2 .num { color: var(--accent); font-size: 15px; font-family: inherit; margin-right: 8px; }
+  h3 { color: var(--navy); font-size: 17px; margin: 0 0 4px; }
+  p { margin: 0 0 12px; }
+  section > p { max-width: 68ch; }
+  .muted { color: var(--muted); }
+  .small { font-size: 14px; }
+
+  /* Now / Previously card */
+  .now-prev {
+    margin: 0 0 16px;
+    padding: 10px 14px;
+    background: var(--slate-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    font-size: 15px;
+  }
+
+  /* Timeline & News lists */
+  .meta-block {
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .meta-block h3 { margin-bottom: 8px; }
+  .meta-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .meta-list li {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px;
+    font-size: 15px;
+    align-items: baseline;
+  }
+  .meta-date {
+    font-weight: 600;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .meta-detail { margin: 0; }
+
+  /* Publications */
+  section#publications { counter-reset: pub; }
+  .pub-group { margin-top: 16px; }
+  .pub-group + .pub-group { margin-top: 22px; }
+  .pub-group-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    color: var(--navy);
+    margin: 0 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed var(--line);
+  }
+  ol.pubs { list-style: none; margin: 0; padding: 0; }
+  ol.pubs > li { counter-increment: pub; padding: 16px 0; }
+  ol.pubs > li + li { border-top: 1px solid var(--line); }
+  ol.pubs > li::before {
+    content: counter(pub, decimal-leading-zero) ".";
+    font-family: Georgia, serif; color: var(--accent);
+    font-weight: 700; margin-right: 8px;
+  }
+  .pub-title { font-weight: 700; color: var(--navy); }
+  .badge {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    padding: 2px 9px; border-radius: 999px; margin-left: 6px;
+    vertical-align: 1px; white-space: nowrap;
+  }
+  .badge.submitted { background: var(--amber-bg); color: var(--amber-ink); }
+  .badge.oral { background: var(--green-bg); color: var(--green-ink); }
+  .badge.prep { background: var(--slate-bg); color: var(--slate-ink); }
+  .pub-meta { color: var(--muted); font-size: 14px; margin-top: 2px; }
+  .pub-desc { margin: 6px 0 0; font-size: 15px; }
+
+  /* Project cards */
+  .card {
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 18px 20px;
+    background: #fbfcfe;
+  }
+  .card + .card { margin-top: 18px; }
+  .card .kind { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 10px 0 0; padding: 0; }
+  .tags li { background: var(--accent-soft); color: var(--navy); font-size: 13px; padding: 3px 10px; border-radius: 999px; }
+  .card-links { margin: 12px 0 0; font-size: 14px; }
+  .card-links a + a::before,
+  .card-links a + span::before { content: "· "; color: var(--muted); }
+
+  /* Education & Teaching */
+  .edu { margin: 0 0 16px; }
+  .edu .where { color: var(--muted); font-size: 14px; }
+  .teaching-block {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .teaching-block h3 { margin-bottom: 8px; }
+
+  /* Skills */
+  .skill-groups { display: grid; gap: 16px; }
+  @media (min-width: 640px) { .skill-groups { grid-template-columns: 1fr 1fr; } }
+  .skill-groups h3 { font-size: 15px; margin-bottom: 6px; }
+  .skill-groups ul { margin: 0; padding-left: 18px; }
+  .skill-groups li { margin-bottom: 2px; }
+
+  /* Certifications */
+  dl.certs { margin: 0; display: grid; gap: 12px; }
+  dl.certs div { display: grid; grid-template-columns: 140px 1fr; gap: 12px; }
+  dl.certs dt { font-weight: 700; color: var(--navy); font-size: 15px; }
+  dl.certs dd { margin: 0; }
+
+  /* Footer */
+  footer.site { border-top: 1px solid var(--line); margin-top: 32px; padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
+  footer.site .links { display: flex; flex-wrap: wrap; gap: 4px 18px; list-style: none; margin: 0 0 12px; padding: 0; }
+
+  @media (max-width: 800px) {
+    header.site { position: static; }
+    section { scroll-margin-top: 16px; }
+    header.site .wrap { flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; }
+    header.site nav { margin-left: 0; flex: 1 1 100%; min-width: 0; }
+    header.site nav ul { flex-wrap: wrap; overflow-x: visible; }
+  }
+  @media (max-width: 560px) {
+    h1 { font-size: 28px; }
+    .hero { padding-top: 32px; }
+    .hero-inner { gap: 16px; }
+    .photo { width: 96px; height: 96px; flex-basis: 96px; }
+    .brand { font-size: 15px; }
+    dl.certs div { grid-template-columns: 1fr; gap: 0; }
+    .meta-list li { grid-template-columns: 1fr; gap: 2px; }
+  }
+
+  /* Print stylesheet */
+  @media print {
+    @page {
+      margin: 1.2cm 1.4cm;
+      size: A4 portrait;
+    }
+    *, *::before, *::after {
+      background: transparent !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+    body {
+      background: #fff !important;
+      color: #000 !important;
+      font-size: 11pt;
+      line-height: 1.45;
+    }
+    .skip-link,
+    header.site,
+    button,
+    .copy-note {
+      display: none !important;
+    }
+    .wrap {
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .hero {
+      padding: 0 0 10px;
+    }
+    .photo {
+      width: 100px;
+      height: 100px;
+      flex: 0 0 100px;
+      border: 1px solid #ccc !important;
+    }
+    h1 {
+      color: #000 !important;
+      font-size: 22pt;
+      margin: 0 0 4px;
+    }
+    .tagline {
+      color: #222 !important;
+      font-size: 12pt;
+      margin: 0 0 6px;
+    }
+    .one-liner {
+      font-size: 10.5pt;
+      margin: 0 0 8px;
+    }
+    .role-strip {
+      color: #444 !important;
+      font-size: 9.5pt;
+      margin: 6px 0 0;
+    }
+    .chips {
+      gap: 4px 14px;
+      margin: 6px 0 8px;
+    }
+    .chips a {
+      border: none !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      color: #000 !important;
+      font-size: 10pt;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .chips a.primary {
+      background: transparent !important;
+      color: #000 !important;
+    }
+    section {
+      padding: 8px 0 2px;
+      page-break-inside: auto;
+      break-inside: auto;
+    }
+    section + section {
+      border-top: 1px solid #ddd !important;
+      margin-top: 10px;
+    }
+    h2 {
+      color: #000 !important;
+      font-size: 14pt;
+      margin: 0 0 6px;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    h2 .num {
+      color: #333 !important;
+    }
+    h3 {
+      color: #000 !important;
+      font-size: 11pt;
+      margin: 0 0 4px;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    .pub-group-title {
+      color: #000 !important;
+      font-size: 12pt;
+      page-break-after: avoid;
+      break-after: avoid;
+      border-bottom: 1px dashed #999 !important;
+    }
+    .pub-title,
+    .meta-date,
+    dl.certs dt {
+      color: #000 !important;
+    }
+    p {
+      margin: 0 0 8px;
+    }
+    .now-prev {
+      border: 1px solid #ddd !important;
+      background: #f8f9fa !important;
+      border-left: 3px solid #222 !important;
+      padding: 6px 10px;
+      margin-bottom: 10px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .card {
+      border: 1px solid #ccc !important;
+      background: #fff !important;
+      border-left: 3px solid #222 !important;
+      padding: 10px 12px;
+      margin-top: 10px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .card .kind {
+      color: #333 !important;
+    }
+    .badge {
+      border: 1px solid #555 !important;
+      background: transparent !important;
+      color: #000 !important;
+      padding: 1px 6px;
+    }
+    .tags li {
+      border: 1px solid #aaa !important;
+      background: transparent !important;
+      color: #000 !important;
+      padding: 1px 7px;
+    }
+    .card,
+    .meta-block,
+    section#education,
+    ol.pubs > li,
+    .meta-list li,
+    .edu,
+    .skill-groups > div,
+    dl.certs div {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .teaching-block {
+      margin-top: 8px;
+      padding-top: 6px;
+    }
+    .skill-groups {
+      gap: 8px;
+    }
+    dl.certs {
+      gap: 6px;
+    }
+    .edu {
+      margin: 0 0 8px;
+    }
+    a {
+      color: #000 !important;
+      text-decoration: underline;
+    }
+    a[href^="http"]::after {
+      content: " (" attr(href) ")";
+      font-size: 0.85em;
+      font-weight: normal;
+      color: #333 !important;
+      word-break: break-all;
+    }
+    a[href$=".pdf"]::after {
+      content: " (https://reza-s80.github.io/" attr(href) ")";
+      font-size: 0.85em;
+      font-weight: normal;
+      color: #333 !important;
+    }
+    a[href^="#"] {
+      text-decoration: none !important;
+      color: inherit !important;
+    }
+    a[href^="#"]::after,
+    a[href^="mailto:"]::after {
+      content: "";
+    }
+    footer.site {
+      border-top: 1px solid #ddd !important;
+      margin-top: 12px;
+      padding: 6px 0 12px;
+      page-break-before: avoid;
+      break-before: avoid;
+    }
+    footer.site .links a::after {
+      content: "";
+    }
+  }
+
+  /* Dark mode: follows the visitor's system preference (no toggle, no JS). */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --navy: #d7e3f0;
+      --ink: #dbe4ee;
+      --muted: #9db0c3;
+      --accent: #7aa7e8;
+      --accent-soft: #1a2c44;
+      --line: #26374c;
+      --bg: #0e1622;
+      --amber-bg: #3a2c10;
+      --amber-ink: #f2c879;
+      --green-bg: #12291a;
+      --green-ink: #7fce93;
+      --slate-bg: #182635;
+      --slate-ink: #b9c9da;
+    }
+    header.site { background: rgba(14,22,34,.96); }
+    .skip-link { background: #1a2c44; }
+    .chips a, .chips button { background: #121f30; }
+    .chips a.primary { background: #2f6fd0; }
+    .chips a.primary:hover { background: #2a63bd; }
+    .card { background: #111e2e; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to main content</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Reza Sangari Abiz</a>
+    <nav aria-label="Sections">
+      <ul role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certs">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top" tabindex="-1">
+
+  <div class="hero">
+    <div class="hero-inner">
+      <img class="photo" src="images/photo.jpg" alt="Portrait of Reza Sangari Abiz" width="120" height="120" fetchpriority="high">
+      <div>
+        <h1>Reza Sangari Abiz</h1>
+        <p class="tagline">AI Researcher | Soft Computing &amp; Scientific Machine Learning</p>
+        <p class="one-liner">I develop hybrid metaheuristic methods and physics-informed neural networks for nonlinear partial differential equations.</p>
+        <ul class="chips" role="list">
+          <li><a class="primary" href="cv.pdf" aria-label="Download CV (PDF)">Download CV</a></li>
+          <li><a href="https://github.com/Reza-S80" aria-label="GitHub — code">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/reza-sangari-abiz" aria-label="LinkedIn — professional profile">LinkedIn</a></li>
+          <li><a href="https://orcid.org/0009-0001-8662-9218" aria-label="ORCID — publications">ORCID</a></li>
+          <li><button type="button" id="copy-email">Copy email</button></li>
+        </ul>
+        <p class="role-strip">Independent Researcher &middot; Soft Computing &amp; Scientific Machine Learning &middot; PINNs &amp; Metaheuristic Optimization</p>
+        <p class="copy-note" id="copy-note" role="status" aria-live="polite"></p>
+        <noscript><p class="copy-note">Copy is unavailable without JavaScript — email: reza.abiz80@gmail.com</p></noscript>
+      </div>
+    </div>
+  </div>
+
+  <section id="about" aria-labelledby="about-h">
+    <h2 id="about-h"><span class="num" aria-hidden="true">01</span>About</h2>
+    <p class="now-prev"><strong>Now:</strong> Independent Researcher (Nov 2026 – Present)<br><strong>Previously:</strong> M.Sc., Damghan University (2026)</p>
+    <p>I am an AI researcher working on soft computing and scientific machine learning. I completed my M.Sc. in Soft Computing and Artificial Intelligence at Damghan University in 2026 (Excellent, GPA 17.49/20), following a B.Sc. in Computer Science at Birjand University of Technology (2019–2023).</p>
+    <p>My work combines hybrid metaheuristic optimization (MFO–BOA) with B-spline collocation for nonlinear PDEs, and physics-informed neural networks for stiff reaction–diffusion systems. I also work on Persian lip-reading. I am an independent researcher and a member of IAENG (#588946).</p>
+
+    <div class="meta-block">
+      <h3>Recent updates</h3>
+      <ul class="meta-list" role="list">
+        <li>
+          <span class="meta-date">14 Nov 2026</span>
+          <span class="meta-detail">Released <a href="https://github.com/Reza-S80/MFO-BOA-PDE-Solver">MFO–BOA–PDE–Solver</a> v1.1.5 with <a href="https://doi.org/10.5281/zenodo.24222698">Zenodo DOI: 10.5281/zenodo.24222698</a>.</span>
+        </li>
+        <li>
+          <span class="meta-date">Nov 2026</span>
+          <span class="meta-detail">Admitted as Member #588946 of the International Association of Engineers (IAENG).</span>
+        </li>
+        <li>
+          <span class="meta-date">Oct 2026</span>
+          <span class="meta-detail">Review paper on AI &amp; ML in Nanotechnology submitted to <a href="https://icnn2026.ir/">NCWNN7</a> (Oral).</span>
+        </li>
+        <li>
+          <span class="meta-date">Target 14 Feb 2027</span>
+          <span class="meta-detail">Preparing submission on PINN fitness-selection reliability for the First International Interdisciplinary Sciences Congress (<a href="https://medlife2027.ir/">MedLife 2027</a>, Tehran).</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="meta-block">
+      <h3>Career timeline</h3>
+      <ol class="meta-list" role="list">
+        <li>
+          <span class="meta-date">2019–2023</span>
+          <span class="meta-detail">B.Sc. in Computer Science, Birjand University of Technology</span>
+        </li>
+        <li>
+          <span class="meta-date">2026</span>
+          <span class="meta-detail">M.Sc. in Soft Computing &amp; AI, Damghan University (Excellent, GPA 17.49/20)</span>
+        </li>
+        <li>
+          <span class="meta-date">Nov 2026 – Present</span>
+          <span class="meta-detail">Independent Researcher</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="research" aria-labelledby="research-h">
+    <h2 id="research-h"><span class="num" aria-hidden="true">02</span>Research interests</h2>
+    <div class="skill-groups">
+      <div>
+        <h3>Metaheuristic optimization for scientific computing</h3>
+        <p>Hybrid moth-flame and butterfly optimization (MFO–BOA) for tuning numerical solvers and neural-network configurations.</p>
+        <p class="small muted">Outputs: <a href="#publications">MFO–BOA article</a> (Submitted Oct 2026) · <a href="#projects">MFO–BOA–PDE–Solver</a></p>
+      </div>
+      <div>
+        <h3>Physics-informed neural networks</h3>
+        <p>PINNs for stiff reaction–diffusion systems, and diagnosing when fitness-based configuration selection can be trusted.</p>
+        <p class="small muted">Output: <a href="#publications">MedLife 2027 paper</a> (In preparation)</p>
+      </div>
+      <div>
+        <h3>Numerical methods for PDEs</h3>
+        <p>B-spline collocation for nonlinear partial differential equations, benchmarked against classical finite-difference and finite-element methods.</p>
+        <p class="small muted">Outputs: <a href="#projects">Thesis benchmarks</a> (Burgers mean RMSE 2.8&times;10<sup>−4</sup>) · <a href="#publications">Collocation study</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" aria-labelledby="pubs-h">
+    <h2 id="pubs-h"><span class="num" aria-hidden="true">03</span>Publications</h2>
+
+    <div class="pub-group">
+      <h3 class="pub-group-title">Submitted</h3>
+      <ol class="pubs" role="list">
+        <li>
+          <span class="pub-title">A Hybrid Metaheuristic Algorithm (MFO–BOA) for Numerical Solution of Nonlinear Partial Differential Equations with Engineering Applications</span>
+          <span class="badge submitted">Submitted · Oct 2026</span>
+          <p class="pub-meta">Dr. Reza Pourgholi, Dr. Sajjad Rahmani, Dr. Saedeh Foadian, Reza Sangari Abiz · Journal of Mathematical Research · <a href="https://github.com/Reza-S80/MFO-BOA-PDE-Solver" aria-label="Code for the MFO–BOA paper">Code</a></p>
+          <p class="pub-desc">M.Sc. thesis work: a hybrid MFO–BOA solver with B-spline collocation for nonlinear PDEs, benchmarked against classical methods.</p>
+        </li>
+        <li>
+          <span class="pub-title">Artificial Intelligence and Machine Learning in Nanotechnology: A Selective Critical Narrative Review with Evidence-Type Stratification</span>
+          <span class="badge submitted">Submitted · Oct 2026 · Decision pending</span>
+          <span class="badge oral">Oral · NCWNN7 · icnn2026-00630036</span>
+          <p class="pub-meta">Reza Sangari Abiz, Pooria Salehi Siuki · NCWNN7 conference · <a href="https://icnn2026.ir/" aria-label="NCWNN7 conference website">Conference website</a></p>
+          <p class="pub-desc">Selective critical review of AI and machine learning in nanotechnology, organised by type of evidence.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="pub-group">
+      <h3 class="pub-group-title">In preparation</h3>
+      <ol class="pubs" role="list">
+        <li>
+          <span class="pub-title">Diagnosing Fitness-Selection Reliability in Metaheuristic Optimization of Physics-Informed Neural Networks for Stiff Reaction–Diffusion Systems: A Selected-Configuration (B1) Diagnostic Against the Corrected Baseline</span>
+          <span class="badge prep">In preparation · MedLife 2027</span>
+          <p class="pub-meta">Reza Sangari Abiz, Pooria Salehi Siuki · First International Interdisciplinary Sciences Congress (MedLife 2027), Tehran, February 2027 · <a href="https://medlife2027.ir/" aria-label="MedLife 2027 congress website">Congress website</a></p>
+          <p class="pub-desc">Diagnostic study of when fitness-based selection of PINN configurations optimized by hybrid MFO–BOA can be trusted for stiff reaction–diffusion systems.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <h2 id="projects-h"><span class="num" aria-hidden="true">04</span>Featured projects</h2>
+    <p><strong>Current focus:</strong> When can you trust fitness-based selection of PINN configurations? The question behind the MedLife 2027 paper (in preparation, target 14 Feb 2027).</p>
+    <article class="card">
+      <p class="kind">Open-source software</p>
+      <h3>MFO–BOA–PDE–Solver</h3>
+      <p>Hybrid Moth-Flame Optimization (MFO) + Butterfly Optimization Algorithm (BOA) with B-spline collocation for nonlinear PDEs. M.Sc. thesis implementation, Damghan University (2026).</p>
+      <p class="small">Thesis benchmarks (30 runs, mean RMSE): heat equation 3.2&times;10<sup>−5</sup>; Burgers&rsquo; equation 2.8&times;10<sup>−4</sup> — about 62% lower than MFO and 69% lower than BOA; diffusion equation 3.9&times;10<sup>−4</sup>.</p>
+      <p class="small">Companion paper: MFO–BOA article, Submitted Oct 2026 (<a href="#publications">see Publications</a>).</p>
+      <p class="card-links">
+        <a href="https://github.com/Reza-S80/MFO-BOA-PDE-Solver">GitHub repository</a>
+        <a href="https://doi.org/10.5281/zenodo.24222698">Zenodo DOI: 10.5281/zenodo.24222698</a>
+        <span class="muted small">Version 1.1.5</span>
+      </p>
+      <ul class="tags" role="list" aria-label="Technologies for MFO–BOA solver">
+        <li>Python</li><li>NumPy</li><li>SciPy</li><li>B-spline collocation</li><li>Metaheuristics</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <p class="kind">Work in progress — dataset + model</p>
+      <h3>Persian Lip-Reading (LRW-Persian)</h3>
+      <p>Persian visual speech recognition evaluated on the LRW-Persian benchmark. Developing deep neural architectures for word-level Persian lip-reading alongside a public dataset release.</p>
+      <p class="small">Best run achieves 35.31% TEST Top-1 accuracy (compared to the reference paper&rsquo;s 41.09%); training run 8 terminated and cannot be resumed; a new run must start from epoch 0 once GPU compute is available.</p>
+      <p class="small">Companion dataset: Public release on Hugging Face; model code in preparation.</p>
+      <p class="card-links">
+        <a href="https://huggingface.co/datasets/reza-sangari/lrw-persian-full">Hugging Face dataset &mdash; 414,278 clips</a>
+        <span class="muted small">Code repository in preparation</span>
+      </p>
+    </article>
+  </section>
+
+  <section id="education" aria-labelledby="edu-h">
+    <h2 id="edu-h"><span class="num" aria-hidden="true">05</span>Education</h2>
+    <div class="edu">
+      <h3>M.Sc. in Soft Computing &amp; Artificial Intelligence</h3>
+      <p class="where">Damghan University · 2026 · GPA 17.49/20, Excellent</p>
+      <p class="small">Thesis: “Solving Nonlinear Partial Differential Equations Using the Hybrid Moth-Flame and Butterfly Metaheuristic Algorithm and Its Applications in Engineering Problems.”</p>
+      <p class="small muted">Supervisor: Dr. Sajjad Rahmani · Co-supervisor: Dr. Reza Pourgholi · Advisor: Dr. Saedeh Foadian</p>
+    </div>
+    <div class="edu">
+      <h3>B.Sc. in Computer Science</h3>
+      <p class="where">Birjand University of Technology · 2019–2023</p>
+    </div>
+
+    <div class="teaching-block">
+      <h3>Teaching</h3>
+      <div class="edu">
+        <p><strong>Teaching Assistant</strong> — Fundamentals of Computation Theory</p>
+        <p class="where">Damghan University · Sep 2024 – Jan 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <h2 id="skills-h"><span class="num" aria-hidden="true">06</span>Skills</h2>
+    <div class="skill-groups">
+      <div>
+        <h3>Scientific ML &amp; numerical methods</h3>
+        <ul>
+          <li>Physics-informed neural networks (PINNs)</li>
+          <li>PDE solvers &amp; B-spline collocation</li>
+          <li>Stiff reaction–diffusion systems</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Optimization &amp; AI</h3>
+        <ul>
+          <li>Hybrid metaheuristics (MFO–BOA)</li>
+          <li>Soft computing</li>
+          <li>Deep learning</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Languages &amp; libraries</h3>
+        <ul>
+          <li>Python, NumPy, SciPy, pandas, Matplotlib</li>
+          <li>Git / GitHub, LaTeX, SQL</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="certs" aria-labelledby="certs-h">
+    <h2 id="certs-h"><span class="num" aria-hidden="true">07</span>Certifications &amp; memberships</h2>
+    <dl class="certs">
+      <div>
+        <dt>Harvard CS50</dt>
+        <dd>CS50 AI (certificate 3d3cc221-cb86-4d7d-b508-361740a15edf), CS50x, CS50P, CS50 SQL (certificate 59623581-b482-4d07-9567-03017a0adef8), CS50 Cybersecurity (certificate bfb9b272-e544-4901-883d-a7e6176d3050 · 27 Oct 2026)</dd>
+      </div>
+      <div>
+        <dt>Harvard CS50W</dt>
+        <dd>Web Programming with Python and JavaScript — Mail, Network, Wiki, Commerce and Capstone passed; Search: gradebook review pending</dd>
+      </div>
+      <div>
+        <dt>Hugging Face</dt>
+        <dd>Agents Course (Certificate of Excellence · 5 Nov 2026), Fundamentals (Oct 2026)</dd>
+      </div>
+      <div>
+        <dt>Kaggle</dt>
+        <dd>6 certificates, including Intro to Deep Learning</dd>
+      </div>
+      <div>
+        <dt>DataCamp</dt>
+        <dd>Intro to Deep Learning with PyTorch &middot; Certificate #50,855,536 &middot; AI Fundamentals Skill Assessment: 189/200 (99th percentile)</dd>
+      </div>
+      <div>
+        <dt>IAENG</dt>
+        <dd>Member #588946 — Societies of Artificial Intelligence and Computer Science, since Nov 2026</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h"><span class="num" aria-hidden="true">08</span>Contact</h2>
+    <p>The best way to reach me is by email. I am open to research collaborations.</p>
+    <p><a href="mailto:reza.abiz80@gmail.com">reza.abiz80@gmail.com</a></p>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <ul class="links" role="list">
+      <li><a href="https://github.com/Reza-S80" aria-label="GitHub — code">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/reza-sangari-abiz" aria-label="LinkedIn — professional profile">LinkedIn</a></li>
+      <li><a href="https://orcid.org/0009-0001-8662-9218" aria-label="ORCID: 0009-0001-8662-9218">ORCID: 0009-0001-8662-9218</a></li>
+      <li><a href="cv.pdf">CV (PDF)</a></li>
+    </ul>
+    <p>© 2026 Reza Sangari Abiz · Last updated: November 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copy-email');
+    var note = document.getElementById('copy-note');
+    btn.addEventListener('click', function () {
+      var email = 'reza.abiz80@gmail.com';
+      function done() { note.textContent = 'Email copied: ' + email; }
+      function fail() { note.textContent = 'Copy failed — email: ' + email; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done, fail);
+      } else { fail(); }
+    });
+  })();
+</script>
+</body>
+</html>
